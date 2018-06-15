@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/kenziebottoms/insteal/issues"
   },
-  "homepage": "https://github.com/kenziebottoms/insteal#readme"
+  "homepage": "https://github.com/kenziebottoms/insteal#readme",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
 }
