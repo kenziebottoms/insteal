@@ -12,6 +12,10 @@
       - [`node cli.js profile <username> followers`](#node-clijs-profile-username-followers)
       - [`node cli.js profile <username> following`](#node-clijs-profile-username-following)
       - [`node cli.js profile <username> pic`](#node-clijs-profile-username-pic)
+    - [Tags](#tags)
+      - [`node cli.js tag <tagname>`](#node-clijs-tag-tagname)
+      - [`node cli.js tag <tagname> feed`](#node-clijs-tag-tagname-feed)
+      - [`node cli.js tag <tagname> feed <limit>`](#node-clijs-tag-tagname-feed-limit)
 
 <!-- /TOC -->
 
@@ -48,3 +52,17 @@ Fetch number of users `<username>` is following.
 #### `node cli.js profile <username> pic`
 
 Fetch `<username>`'s profile picture URL.
+
+### Tags
+
+#### `node cli.js tag <tagname>`
+
+Fetch raw `_sharedData` from `<tagname>`'s explore page.
+
+#### `node cli.js tag <tagname> feed`
+
+Fetch data on `<tagname>`'s top posts, up to 100 (the max is usually around 70).
+
+#### `node cli.js tag <tagname> feed <limit>`
+
+Fetch data on `<tagname>`'s top `<limit>` posts (the max is usually around 70).
