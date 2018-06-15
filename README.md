@@ -1,31 +1,33 @@
-## Insteal
+# Insteal
 
-### `cli.js`
+## `cli.js`
 
-#### `<username>` or `profile <username>`
+### `profile`
+
+#### `<username>`
 
 Fetch raw `_sharedData` from `<username>`'s profile.
 
-#### `feed <username>`
+#### `<username> feed`
 
 Fetch data on `<username>`'s first 12 posts.
 
-#### `feed <username> <limit>`
+#### `<username> feed <limit>`
 
 Fetch data on `<username>`'s first `<limit>` posts, up to 12.
 
-#### `bio <username>`
+#### `<username> bio`
 
 Fetch `<username>`'s bio.
 
-#### `followers <username>`
+#### `<username> followers`
 
 Fetch number of followers `<username>` has.
 
-#### `following <username>`
+#### `<username> following`
 
 Fetch number of users `<username>` is following.
 
-#### `pic <username>`
+#### `<username> pic`
 
 Fetch `<username>`'s profile picture URL.
