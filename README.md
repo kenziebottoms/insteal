@@ -25,3 +25,7 @@ Fetch number of followers `<username>` has.
 #### `following <username>`
 
 Fetch number of users `<username>` is following.
+
+#### `pic <username>`
+
+Fetch `<username>`'s profile picture URL.

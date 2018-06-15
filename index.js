@@ -68,6 +68,18 @@ module.exports.following = user => {
   });
 };
 
+// get number of users followed from user's profile
+module.exports.pic = user => {
+  return new Promise((resolve, reject) => {
+    module.exports.profile(user)
+      .then(user => {
+        let { profile_pic_url_hd } = user;
+        resolve(profile_pic_url_hd);
+      })
+      .catch(err => reject(err));
+  });
+};
+
 // get all raw data on user's first 12 images
 module.exports.feed = (user, limit = 12) => {
   return new Promise((resolve, reject) => {
