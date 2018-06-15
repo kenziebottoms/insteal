@@ -13,5 +13,13 @@
     "scrape"
   ],
   "author": "Kenzie Bottoms <kenziebottoms@gmail.com> (http://kenzie.ink)",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenziebottoms/insteal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kenziebottoms/insteal/issues"
+  },
+  "homepage": "https://github.com/kenziebottoms/insteal#readme"
 }
