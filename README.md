@@ -1,8 +1,22 @@
 # Insteal
 
+![](https://img.shields.io/badge/data-instagram-cc006c.svg)
+![](https://img.shields.io/badge/node-v9.11.1-61BC62.svg)
+![](https://img.shields.io/badge/working_as_of-june_15th_2018-blue.svg)
+
+## Run locally
+
+```bash
+git clone git@github.com:kenziebottoms/insteal.git
+cd insteal
+npm install
+node cli.js # args
+```
+
 <!-- TOC -->
 
 - [Insteal](#insteal)
+  - [Run locally](#run-locally)
   - [CLI Commands](#cli-commands)
     - [Profiles](#profiles)
       - [`node cli.js profile <username>`](#node-clijs-profile-username)
