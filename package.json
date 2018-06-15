@@ -1,0 +1,17 @@
+{
+  "name": "insteal",
+  "version": "1.0.0",
+  "description": "Instagram scraper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "instagram",
+    "scraping",
+    "scraper",
+    "scrape"
+  ],
+  "author": "Kenzie Bottoms <kenziebottoms@gmail.com> (http://kenzie.ink)",
+  "license": "ISC"
+}
