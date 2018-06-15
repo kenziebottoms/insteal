@@ -40,7 +40,7 @@ module.exports.feed = (user, limit=12) => {
         data = JSON.parse(data);
         let nodes = data.edge_owner_to_timeline_media.edges;
         let feed = nodes.map(n => n.node);
-        resolve(JSON.stringify(feed).slice(0, limit));
+        resolve(JSON.stringify(feed.slice(0, limit)));
       })
       .catch(err => console.log(err));
   });

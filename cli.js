@@ -14,4 +14,8 @@ if (argv.length == 3) {
   insta[argv[2]](argv[3])
     .then(response => console.log(response))
     .catch(err => console.log(err));
+} else if (argv.length == 5) {
+  insta[argv[2]](argv[3], argv[4])
+    .then(response => console.log(response))
+    .catch(err => console.log(err));
 }

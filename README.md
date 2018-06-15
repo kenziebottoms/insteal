@@ -1,11 +1,15 @@
 ## Insteal
 
-### CLI
+### `cli.js`
 
-#### `cli.js <username>` or `cli.js profile <username>`
+#### `<username>` or `profile <username>`
 
 Fetch raw `_sharedData` from `<username>`'s profile.
 
-#### `cli.js feed <username>`
+#### `feed <username>`
 
 Fetch data on `<username>`'s first 12 posts.
+
+#### `feed <username> <limit>`
+
+Fetch data on `<username>`'s first `<limit>` posts, up to 12.
