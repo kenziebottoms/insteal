@@ -1,6 +1,6 @@
 'use strict';
 
-const { getSharedData } = require('./insta');
+const { getSharedData, cleanFeed } = require('./insta');
 
 // get all raw data from user's profile
 const profile = user => {
@@ -62,8 +62,18 @@ const pic = user => {
   });
 };
 
-// get all raw data on user's first 12 images
 const feed = (user, limit = 12) => {
+  return new Promise((resolve, reject) => {
+    raw_feed(user, limit)
+      .then(data => {
+        let feed = cleanFeed(data);
+        resolve(feed.slice(0, limit));
+      })
+  });
+}
+
+// get all raw data on user's first 12 images
+const raw_feed = (user, limit = 12) => {
   return new Promise((resolve, reject) => {
     profile(user)
       .then(data => {
@@ -81,5 +91,6 @@ module.exports = {
   followers,
   following,
   pic,
-  feed
+  feed,
+  raw_feed
 };
