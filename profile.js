@@ -1,11 +1,11 @@
 'use strict';
 
-const insta = require('./insta');
+const { getSharedData } = require('./insta');
 
 // get all raw data from user's profile
-module.exports.profile = user => {
+const profile = user => {
   return new Promise((resolve, reject) => {
-    insta.getSharedData(user)
+    getSharedData(user)
       .then(data => {
         let { user } = data.entry_data.ProfilePage[0].graphql;
         resolve(user);
@@ -15,9 +15,9 @@ module.exports.profile = user => {
 };
 
 // get bio from user's profile
-module.exports.bio = user => {
+const bio = user => {
   return new Promise((resolve, reject) => {
-    module.exports.profile(user)
+    profile(user)
       .then(user => {
         let { biography } = user;
         resolve(biography);
@@ -27,9 +27,9 @@ module.exports.bio = user => {
 };
 
 // get number of followers from user's profile
-module.exports.followers = user => {
+const followers = user => {
   return new Promise((resolve, reject) => {
-    module.exports.profile(user)
+    profile(user)
       .then(user => {
         let { edge_followed_by: { count } } = user;
         resolve(count);
@@ -39,9 +39,9 @@ module.exports.followers = user => {
 };
 
 // get number of users followed from user's profile
-module.exports.following = user => {
+const following = user => {
   return new Promise((resolve, reject) => {
-    module.exports.profile(user)
+    profile(user)
       .then(user => {
         let { edge_follow: { count } } = user;
         resolve(count);
@@ -51,9 +51,9 @@ module.exports.following = user => {
 };
 
 // get number of users followed from user's profile
-module.exports.pic = user => {
+const pic = user => {
   return new Promise((resolve, reject) => {
-    module.exports.profile(user)
+    profile(user)
       .then(user => {
         let { profile_pic_url_hd } = user;
         resolve(profile_pic_url_hd);
@@ -63,9 +63,9 @@ module.exports.pic = user => {
 };
 
 // get all raw data on user's first 12 images
-module.exports.feed = (user, limit = 12) => {
+const feed = (user, limit = 12) => {
   return new Promise((resolve, reject) => {
-    module.exports.profile(user)
+    profile(user)
       .then(data => {
         let nodes = data.edge_owner_to_timeline_media.edges;
         let feed = nodes.map(n => n.node);
@@ -73,4 +73,13 @@ module.exports.feed = (user, limit = 12) => {
       })
       .catch(err => console.log(err));
   });
+};
+
+module.exports = {
+  profile,
+  bio,
+  followers,
+  following,
+  pic,
+  feed
 };

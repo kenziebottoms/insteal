@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/data-instagram-cc006c.svg)
 ![](https://img.shields.io/badge/node-v9.11.1-61BC62.svg)
-![](https://img.shields.io/badge/working_as_of-june_15th_2018-blue.svg)
+![](https://img.shields.io/badge/working_as_of-june_16th_2018-blue.svg)
 
 ## Run locally
 
