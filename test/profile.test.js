@@ -94,6 +94,46 @@ describe('raw_feed', () => {
     it('should be a string', () => {
       raw_feed('kenziebottoms')
         .then(data => {
+          assert.isDefined(data[0].shortcode);
+          assert.isString(data[0].shortcode);
+        })
+        .catch(err => {
+          // auto fail
+          assert.isTrue(false);
+        });
+    });
+  });
+});
+
+describe('feed', () => {
+  it('should resolve into an array of objects', () => {
+    feed('kenziebottoms')
+      .then(data => {
+        assert.isDefined(data);
+        assert.isArray(data);
+        assert.isObject(data[0]);
+      })
+      .catch(err => {
+        // auto fail
+        assert.isTrue(false);
+      });
+  });
+  it('should have specific properties', () => {
+    feed('kenziebottoms')
+      .then(data => {
+        assert.property(data[0], 'thumb_url');
+        assert.property(data[0], 'shortcode');
+      })
+      .catch(err => {
+        // auto fail
+        assert.isTrue(false);
+      });
+  });
+  describe('shortcode property', () => {
+    it('should be a string', () => {
+      feed('kenziebottoms')
+        .then(data => {
+          assert.isDefined(data[0].shortcode);
           assert.isString(data[0].shortcode);
         })
         .catch(err => {
