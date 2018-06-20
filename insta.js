@@ -13,7 +13,13 @@ module.exports.getSharedData = path => {
       // grab the next JSON object starting with `{` until it ends with `;` or `<`
       if (!script) return reject(new Error('Instagram is being a bitch.'));
       let data = script.slice(script.indexOf('{')).split(/[;<]/ig)[0];
-      resolve(JSON.parse(data));
+
+      try {
+        data = JSON.parse(data);
+      } catch (e) {
+        reject(e);
+      }
+      resolve(data);
     });
   });
 };

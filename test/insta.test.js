@@ -7,7 +7,7 @@ const {
   cleanFeed
 } = require('../insta');
 
-describe('getSharedData', () => {
+describe('getSharedData:profile', () => {
   it('should resolve into an object', () => {
     getSharedData('kenziebottoms')
       .then(data => {
@@ -16,7 +16,21 @@ describe('getSharedData', () => {
       })
       .catch(err => {
         // auto fail
-        assert.isTrue(false);
+        assert.isTrue(false, 'getSharedData promise rejected');
+      });
+  });
+});
+
+describe('getSharedData:tag', () => {
+  it('should resolve into an object', () => {
+    getSharedData('explore/tags/tattoos')
+      .then(data => {
+        assert.isObject(data);
+        assert.isDefined(data);
+      })
+      .catch(err => {
+        // auto fail
+        assert.isTrue(false, 'getSharedData promise rejected');
       });
   });
 });
