@@ -36,24 +36,51 @@ describe('profile', () => {
         assert.isTrue(false);
       });
   });
-  describe('followers and followed by properties', () => {
-    it('should be integers', () => {
-      profile('kenziebottoms')
-        .then(data => {
-          assert.isNumber(data.edge_follow.count);
-          assert.isNumber(data.edge_followed_by.count);
-        })
-        .catch(err => {
-          // auto fail
-          assert.isTrue(false);
-        });
-    });
-  });
 });
 
 describe('bio', () => {
   it('should be a string', () => {
     bio('whats')
+      .then(data => {
+        assert.isDefined(data);
+        assert.isString(data);
+      })
+      .catch(err => {
+        // auto fail
+        assert.isTrue(false);
+      });
+  });
+});
+
+describe('followers', () => {
+  it('should be a number', () => {
+    followers('kenziebottoms')
+      .then(data => {
+        assert.isNumber(data);
+      })
+      .catch(err => {
+        // auto fail
+        assert.isTrue(false);
+      });
+  });
+});
+
+describe('following', () => {
+  it('should be a number', () => {
+    following('kenziebottoms')
+      .then(data => {
+        assert.isNumber(data);
+      })
+      .catch(err => {
+        // auto fail
+        assert.isTrue(false);
+      });
+  });
+});
+
+describe('pic', () => {
+  it('should be a string', () => {
+    pic('kenziebottoms')
       .then(data => {
         assert.isDefined(data);
         assert.isString(data);
