@@ -7,7 +7,7 @@ const tag = tagname => {
   return new Promise((resolve, reject) => {
     getSharedData(`explore/tags/${tagname}`)
       .then(data => {
-        resolve(data.entry_data.TagPage[0].graphql);
+        resolve(data.entry_data.TagPage[0].graphql.hashtag);
       })
       .catch(err => reject(err));
   });
@@ -29,7 +29,7 @@ const raw_feed = (tagname, limit = 100) => {
   return new Promise((resolve, reject) => {
     tag(tagname)
       .then(data => {
-        let nodes = data.hashtag.edge_hashtag_to_media.edges;
+        let nodes = data.edge_hashtag_to_media.edges;
         let feed = nodes.map(d => d.node);
         resolve(feed.slice(0, limit));
       })
