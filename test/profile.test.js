@@ -76,6 +76,14 @@ describe('raw_feed', () => {
       assert.isString(data[0].shortcode);
     })
   });
+  describe('limit/length', () => {
+    it('should be the same', async () => {
+      let data = await raw_feed('kenziebottoms', 3);
+      assert.isDefined(data);
+      assert.isArray(data);
+      assert.equal(data.length, 3);
+    })
+  });
 });
 
 describe('feed', () => {
@@ -95,6 +103,14 @@ describe('feed', () => {
       let data = await feed('kenziebottoms');
       assert.isDefined(data[0].shortcode);
       assert.isString(data[0].shortcode);
+    })
+  });
+  describe('limit/length', () => {
+    it('should be the same', async () => {
+      let data = await feed('kenziebottoms', 3);
+      assert.isDefined(data);
+      assert.isArray(data);
+      assert.equal(data.length, 3);
     })
   });
 });
